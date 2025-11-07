@@ -34,6 +34,7 @@ ExternalProject_Add(
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/zeromq"
     # do not update
     UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         # Does not seem to work. We have to directly set the flags on Windows.
         #-DCMAKE_POLICY_DEFAULT_CMP0091:STRING=NEW

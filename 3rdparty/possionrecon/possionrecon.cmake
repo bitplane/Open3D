@@ -8,7 +8,7 @@ ExternalProject_Add(
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/poisson"
     SOURCE_DIR "poisson/src/ext_poisson/PoissonRecon" # Add extra directory level for POISSON_INCLUDE_DIRS.
     UPDATE_COMMAND ""
-    PATCH_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""

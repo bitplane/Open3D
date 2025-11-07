@@ -64,6 +64,7 @@ ExternalProject_Add(
         -DENABLE_STATIC=ON
         -DENABLE_SHARED=OFF
         -DWITH_SIMD=${WITH_SIMD}
+        COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         ${ExternalProject_CMAKE_ARGS_hidden}
         # WARNING: libjpeg-turbo uses its own old version of
         # GNUInstallDirs.cmake and leads to invalid installs with

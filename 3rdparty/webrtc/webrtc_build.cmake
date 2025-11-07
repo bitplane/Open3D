@@ -40,6 +40,7 @@ ExternalProject_Add(
     DOWNLOAD_COMMAND ${CMAKE_COMMAND} -E rm -rf ext_webrtc
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/../webrtc ext_webrtc
     UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CONFIGURE_COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/args.gn
         ${WEBRTC_NINJA_ROOT}/args.gn
     BUILD_COMMAND ""

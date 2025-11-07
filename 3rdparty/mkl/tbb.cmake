@@ -33,6 +33,7 @@ ExternalProject_Add(
     PATCH_COMMAND ${GIT_EXECUTABLE} init
     COMMAND ${GIT_EXECUTABLE} apply --ignore-space-change --ignore-whitespace
         ${CMAKE_CURRENT_LIST_DIR}/0001-Allow-selecttion-of-static-dynamic-MSVC-runtime.patch
+    COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=${MKL_INSTALL_PREFIX}
         -DSTATIC_WINDOWS_RUNTIME=${STATIC_WINDOWS_RUNTIME}

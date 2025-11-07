@@ -66,6 +66,7 @@ else()
         URL_HASH SHA256=${FILAMENT_SHA256}
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/filament"
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CONFIGURE_COMMAND ""
         BUILD_IN_SOURCE ON
         BUILD_COMMAND ""

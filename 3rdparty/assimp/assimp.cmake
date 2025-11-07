@@ -21,7 +21,7 @@ ExternalProject_Add(
     URL_HASH SHA256=b2f1c9450609f3bf201aa63b0b16023073d0ebb1c6e9ae5a832441f1e43c634c
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/assimp"
     UPDATE_COMMAND ""
-    PATCH_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         ${ExternalProject_CMAKE_ARGS_hidden}
         -DCMAKE_CXX_FLAGS:STRING=${assimp_cmake_cxx_flags}

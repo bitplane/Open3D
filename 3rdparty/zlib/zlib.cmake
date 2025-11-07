@@ -19,6 +19,7 @@ ExternalProject_Add(
     COMMAND       ${GIT_EXECUTABLE} apply --ignore-space-change --ignore-whitespace
                   ${CMAKE_CURRENT_LIST_DIR}/0001-patch-zlib-to-enable-unzip.patch
     COMMAND       sed -i "s/cmake_minimum_required.*/cmake_minimum_required(VERSION 3.5)/" CMakeLists.txt
+    COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         # zlib needs visiible symbols for examples. Disabling example building causes

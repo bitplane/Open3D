@@ -42,7 +42,7 @@ ExternalProject_Add(ext_ippicv
     UPDATE_COMMAND ""
     PATCH_COMMAND ${CMAKE_COMMAND} -E copy
         ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/ippicv/CMakeLists.txt <SOURCE_DIR>
-        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
+        COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         ${ExternalProject_CMAKE_ARGS_hidden}

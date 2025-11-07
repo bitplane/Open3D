@@ -41,6 +41,7 @@ if(BUILD_VTK_FROM_SOURCE)
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/vtk"
         # do not update
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CMAKE_ARGS
             ${ExternalProject_CMAKE_ARGS_hidden}
             -DBUILD_SHARED_LIBS=OFF
@@ -331,6 +332,7 @@ else() #### download prebuilt vtk
         URL_HASH SHA256=${VTK_SHA256}
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/vtk"
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CONFIGURE_COMMAND ""
         BUILD_COMMAND ""
         INSTALL_COMMAND ""

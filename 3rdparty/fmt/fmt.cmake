@@ -21,7 +21,7 @@ ExternalProject_Add(
     URL_HASH SHA256=${FMT_SHA256}
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/fmt"
     UPDATE_COMMAND ""
-    PATCH_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         ${ExternalProject_CMAKE_ARGS_hidden}
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>

@@ -73,7 +73,7 @@ ExternalProject_Add(
     URL_HASH SHA256=74ec785afb8f14d28ea5e0773544572c8df2e899caccdfc88509f1bfff58716f
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/embree"
     UPDATE_COMMAND ""
-    PATCH_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         ${ExternalProject_CMAKE_ARGS_hidden}
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>

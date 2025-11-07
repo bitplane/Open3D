@@ -12,7 +12,7 @@ ExternalProject_Add(
     PATCH_COMMAND ${GIT_EXECUTABLE} init
     COMMAND ${GIT_EXECUTABLE} apply --ignore-space-change --ignore-whitespace
                   ${CMAKE_CURRENT_LIST_DIR}/0001-optional-CXX11-ABI-and-MSVC-runtime.patch
-    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
+    COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         -DBUILD_SHARED_LIBS=OFF

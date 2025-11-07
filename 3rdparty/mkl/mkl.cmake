@@ -68,6 +68,7 @@ if(WIN32)
         URL_HASH SHA256=${MKL_INCLUDE_SHA256}
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/mkl"
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CONFIGURE_COMMAND ""
         BUILD_COMMAND ""
         INSTALL_COMMAND ${CMAKE_COMMAND} -E copy_directory <SOURCE_DIR>/Library/include ${MKL_INSTALL_PREFIX}/include
@@ -79,6 +80,7 @@ if(WIN32)
         URL_HASH SHA256=${MKL_SHA256}
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/mkl"
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CONFIGURE_COMMAND ""
         BUILD_COMMAND ""
         INSTALL_COMMAND ${CMAKE_COMMAND} -E copy_directory <SOURCE_DIR>/Library/lib ${STATIC_MKL_LIB_DIR}
@@ -109,6 +111,7 @@ elseif(APPLE)
         URL_HASH SHA256=${MKL_INCLUDE_SHA256}
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/mkl"
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CONFIGURE_COMMAND ""
         BUILD_COMMAND ""
         INSTALL_COMMAND ${CMAKE_COMMAND} -E copy_directory <SOURCE_DIR>/include ${MKL_INSTALL_PREFIX}/include
@@ -120,6 +123,7 @@ elseif(APPLE)
         URL_HASH SHA256=${MKL_SHA256}
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/mkl"
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CONFIGURE_COMMAND ""
         BUILD_COMMAND ""
         INSTALL_COMMAND ${CMAKE_COMMAND} -E copy_directory <SOURCE_DIR>/lib ${STATIC_MKL_LIB_DIR}
@@ -137,6 +141,7 @@ else()
         URL_HASH SHA256=${MKL_INCLUDE_SHA256}
         DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/mkl"
         UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
         CONFIGURE_COMMAND ""
         BUILD_COMMAND ""
         INSTALL_COMMAND ${CMAKE_COMMAND} -E copy_directory <SOURCE_DIR>/include ${MKL_INSTALL_PREFIX}/include
@@ -164,6 +169,7 @@ else()
             URL_HASH SHA256=${MKL_SHA256}
             DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/mkl"
             UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
             CONFIGURE_COMMAND ""
             BUILD_IN_SOURCE ON
             BUILD_COMMAND echo "Extracting static libs..."
@@ -186,6 +192,7 @@ else()
             URL_HASH SHA256=${MKL_MERGED_SHA256}
             DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/mkl"
             UPDATE_COMMAND ""
+    PATCH_COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
             CONFIGURE_COMMAND ""
             BUILD_IN_SOURCE ON
             BUILD_COMMAND ""
