@@ -57,6 +57,7 @@ ExternalProject_Add(
     URL_HASH SHA256=61846251941e5791005fb7face196eec24541fce04f12570c308557529e92c75
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/libjpeg-turbo"
     UPDATE_COMMAND ""
+    PATCH_COMMAND sed -i "s/cmake_minimum_required(VERSION [0-2]\\.[0-9]*/cmake_minimum_required(VERSION 3.5/" CMakeLists.txt
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         -DWITH_CRT_DLL=${WITH_CRT_DLL}

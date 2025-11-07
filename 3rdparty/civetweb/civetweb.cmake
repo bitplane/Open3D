@@ -7,6 +7,7 @@ ExternalProject_Add(
     URL_HASH SHA256=90a533422944ab327a4fbb9969f0845d0dba05354f9cacce3a5005fa59f593b9
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/civetweb"
     UPDATE_COMMAND ""
+    PATCH_COMMAND sed -i "s/cmake_policy(VERSION 3\\.2\\.2)/cmake_policy(VERSION 3.5)/" CMakeLists.txt
     CMAKE_ARGS
         -DCIVETWEB_BUILD_TESTING=OFF
         -DCIVETWEB_ENABLE_CXX=ON
