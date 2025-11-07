@@ -11,6 +11,8 @@ ExternalProject_Add(
     URL_HASH SHA256=7bb2733b099f7cedc86d2aee7830d128ac1222cfafa34cbaa4e818483c0a93f6
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/stdgpu"
     UPDATE_COMMAND ""
+    PATCH_COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_minimum_required.*/cmake_minimum_required(VERSION 3.5)/" {} \; || true
+    COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_policy(VERSION [0-2]\.[0-9.]*)/cmake_policy(VERSION 3.5)/" {} \; || true
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         -DCUDAToolkit_ROOT=${CUDAToolkit_LIBRARY_ROOT}
