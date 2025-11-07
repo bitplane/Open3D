@@ -42,8 +42,7 @@ ExternalProject_Add(ext_ippicv
     UPDATE_COMMAND ""
     PATCH_COMMAND ${CMAKE_COMMAND} -E copy
         ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/ippicv/CMakeLists.txt <SOURCE_DIR>
-        COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_minimum_required.*/cmake_minimum_required(VERSION 3.5)/" {} \\; || true
-        COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_policy(VERSION [0-2]\\.[0-9.]*)/cmake_policy(VERSION 3.5)/" {} \\; || true
+        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         ${ExternalProject_CMAKE_ARGS_hidden}

@@ -44,8 +44,7 @@ ExternalProject_Add(
     # copy a dummy sal.h to the include dir. (Visual Studio source-code annotation language)
     PATCH_COMMAND ${CMAKE_COMMAND} -E copy
         ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/uvatlas/sal.h <INSTALL_DIR>/include/DirectXMath/
-        COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_minimum_required.*/cmake_minimum_required(VERSION 3.5)/" {} \\; || true
-        COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_policy(VERSION [0-2]\\.[0-9.]*)/cmake_policy(VERSION 3.5)/" {} \\; || true
+        COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         ${ExternalProject_CMAKE_ARGS_hidden}
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>

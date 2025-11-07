@@ -45,8 +45,7 @@ ExternalProject_Add(
     URL_HASH SHA256=${BORINGSSL_SHA256}
     DOWNLOAD_DIR "${OPEN3D_THIRD_PARTY_DOWNLOAD_DIR}/boringssl"
     UPDATE_COMMAND ""
-    PATCH_COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_minimum_required.*/cmake_minimum_required(VERSION 3.5)/" {} \; || true
-    COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_policy(VERSION [0-2]\.[0-9.]*)/cmake_policy(VERSION 3.5)/" {} \; || true
+    PATCH_COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""

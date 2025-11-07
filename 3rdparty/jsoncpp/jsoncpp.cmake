@@ -11,9 +11,8 @@ ExternalProject_Add(
     UPDATE_COMMAND ""
     PATCH_COMMAND ${GIT_EXECUTABLE} init
     COMMAND ${GIT_EXECUTABLE} apply --ignore-space-change --ignore-whitespace
-    COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_minimum_required.*/cmake_minimum_required(VERSION 3.5)/" {} \\; || true
-    COMMAND find . -name "CMakeLists.txt" -exec sed -i "s/cmake_policy(VERSION [0-2]\\.[0-9.]*)/cmake_policy(VERSION 3.5)/" {} \\; || true
-        ${CMAKE_CURRENT_LIST_DIR}/0001-optional-CXX11-ABI-and-MSVC-runtime.patch
+                  ${CMAKE_CURRENT_LIST_DIR}/0001-optional-CXX11-ABI-and-MSVC-runtime.patch
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         -DBUILD_SHARED_LIBS=OFF
