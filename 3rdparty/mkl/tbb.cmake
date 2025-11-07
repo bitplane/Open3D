@@ -36,6 +36,7 @@ ExternalProject_Add(
     COMMAND bash ${CMAKE_CURRENT_SOURCE_DIR}/fix_cmake_versions.sh
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=${MKL_INSTALL_PREFIX}
+        "-DCMAKE_CXX_FLAGS=-Wno-error -Wno-changes-meaning"
         -DSTATIC_WINDOWS_RUNTIME=${STATIC_WINDOWS_RUNTIME}
         -DTBB_BUILD_TBBMALLOC=ON
         -DTBB_BUILD_TBBMALLOC_PROXYC=OFF
