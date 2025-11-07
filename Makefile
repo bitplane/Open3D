@@ -1,3 +1,5 @@
+.PHONY: build
+
 build:
 	rm -rf ./build/* || true
 	mkdir -p build
